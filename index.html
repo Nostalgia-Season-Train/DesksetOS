@@ -8,6 +8,8 @@
   </head>
   <body>
     <div id="app"></div>
+    <!-- 消除 Windows DPI 缩放 -->
+    <script>document.body.style.zoom = String(1 / window.devicePixelRatio)</script>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
