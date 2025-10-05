@@ -1,5 +1,11 @@
+<script lang="ts" setup>
+import SFC任务栏 from './components/任务栏.vue'
+</script>
+
+
 <template>
   <main>
+    <SFC任务栏/>
   </main>
 </template>
 
