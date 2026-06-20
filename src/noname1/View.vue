@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import SFC任务栏 from './components/任务栏.vue'
+import SFC任务栏 from './widgets/任务栏.vue'
 </script>
 
 
@@ -15,7 +15,7 @@ main {
   width: 100%;
   height: 100%;
 
-  background-image: url('./assets/wallpaper.jpg');
+  background-image: url('./wallpapers/菲比睡觉.jpg');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
