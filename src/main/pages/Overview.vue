@@ -5,7 +5,7 @@
       <h1>DesksetOS</h1>
       <p class="subtitle">下一代桌面操作系统，为创造力而生</p>
       <p class="desc">融合简洁设计与强大性能，让每一次交互都流畅自然。<br>从工作到娱乐，重新定义你的桌面体验。</p>
-      <RouterLink to="/demo/features" class="cta">了解更多 →</RouterLink>
+      <RouterLink to="/features" class="cta">了解更多 →</RouterLink>
     </div>
     <div class="visual">
       <div class="screen">

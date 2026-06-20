@@ -12,23 +12,23 @@ const baseRoutes = Array.from(inlineDesktopMap, ([desktopPath, desktop]) => ({
   component: desktop
 }))
 
-const demoRoutes = {
-  path: '/demo',
-  name: 'demo',
+const mainRoutes = {
+  path: '/',
+  name: 'main',
   component: () => import('./main/View.vue'),
   children: [
-    { path: '',        name: 'demo-overview',  component: () => import('./main/pages/Overview.vue') },
-    { path: 'features', name: 'demo-features', component: () => import('./main/pages/Features.vue') },
-    { path: 'contact',  name: 'demo-contact',  component: () => import('./main/pages/Contact.vue') },
+    { path: '',         name: 'overview',  component: () => import('./main/pages/Overview.vue') },
+    { path: 'features', name: 'features',  component: () => import('./main/pages/Features.vue') },
+    { path: 'contact',  name: 'contact',   component: () => import('./main/pages/Contact.vue') },
+    { path: 'desktops', name: 'desktops',  component: () => import('./main/pages/Desktops.vue') },
   ]
 }
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: '/', name: 'home', component: () => import('./Home.vue') },
-    ...baseRoutes,
-    demoRoutes
+    mainRoutes,
+    ...baseRoutes
   ]
 })
 

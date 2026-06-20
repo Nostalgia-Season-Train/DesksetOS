@@ -8,7 +8,7 @@
         <p>{{ f.desc }}</p>
       </div>
     </div>
-    <RouterLink to="/demo/contact" class="next">下一步 →</RouterLink>
+    <RouterLink to="/contact" class="next">下一步 →</RouterLink>
   </div>
 </template>
 

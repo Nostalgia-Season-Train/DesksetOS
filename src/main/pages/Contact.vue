@@ -4,7 +4,7 @@
       <h1>准备好了吗？</h1>
       <p class="desc">加入 DesksetOS，开启全新桌面体验。<br>免费下载，即刻开始。</p>
       <div class="actions">
-        <button class="primary">立即下载</button>
+        <RouterLink to="/desktops" class="primary">立即体验</RouterLink>
         <button class="secondary">查看文档</button>
       </div>
       <div class="stats">
@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-    <RouterLink to="/demo" class="back">← 返回首页</RouterLink>
+    <RouterLink to="/" class="back">← 返回首页</RouterLink>
   </div>
 </template>
 
@@ -60,7 +60,7 @@ h1 {
   margin-bottom: 56px;
 }
 
-button {
+button, .primary {
   padding: 12px 32px;
   border-radius: 10px;
   font-size: 15px;
@@ -68,6 +68,8 @@ button {
   cursor: pointer;
   transition: .3s;
   border: none;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .primary {

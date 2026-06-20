@@ -1,11 +1,12 @@
 <template>
   <main>
     <nav>
-      <RouterLink to="/demo" class="logo">DesksetOS</RouterLink>
+      <RouterLink to="/" class="logo">DesksetOS</RouterLink>
       <div class="links">
-        <RouterLink to="/demo">概览</RouterLink>
-        <RouterLink to="/demo/features">特性</RouterLink>
-        <RouterLink to="/demo/contact">开始</RouterLink>
+        <RouterLink to="/">概览</RouterLink>
+        <RouterLink to="/features">特性</RouterLink>
+        <RouterLink to="/contact">开始</RouterLink>
+        <RouterLink to="/desktops">桌面</RouterLink>
       </div>
     </nav>
     <RouterView v-slot="{ Component }">
