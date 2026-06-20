@@ -1,8 +1,26 @@
 /* ==== 想要注册的内联桌面 ==== */
-const desktopPathList = [
+export const desktopPathList = [
   'noname1'
 ]
 
+
+/* ==== 预览图：优先 preview.{jpg,png}，否则用 assets/wallpaper.{jpg,png} ==== */
+const previewCodeMap: Record<string, string> = import.meta.glob('./*/preview.{jpg,png}', { eager: true, import: 'default', query: '?url' }) as any
+const wallpaperCodeMap: Record<string, string> = import.meta.glob('./*/assets/wallpaper.{jpg,png}', { eager: true, import: 'default', query: '?url' }) as any
+
+function getPreview(path: string): string | undefined {
+  for (const key of Object.keys(previewCodeMap)) {
+    if (key.startsWith(`./${path}/`)) return previewCodeMap[key]
+  }
+  for (const key of Object.keys(wallpaperCodeMap)) {
+    if (key.startsWith(`./${path}/`)) return wallpaperCodeMap[key]
+  }
+  return undefined
+}
+
+export const desktopPreviewMap: Map<string, string | undefined> = new Map(
+  desktopPathList.map(p => [p, getPreview(p)])
+)
 
 /* ==== 内联桌面 ==== */
 const desktopCodeMap = import.meta.glob('./*/*.vue')
