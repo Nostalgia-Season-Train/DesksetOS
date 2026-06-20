@@ -1,5 +1,14 @@
+<script lang="ts" setup>
+import { useRoute } from 'vue-router'
+import { computed } from 'vue'
+
+const route = useRoute()
+const isDesktop = computed(() => route.meta.desktop === true)
+</script>
+
 <template>
-  <main>
+  <RouterView v-if="isDesktop" />
+  <main v-else>
     <nav>
       <RouterLink to="/" class="logo">DesksetOS</RouterLink>
       <div class="links">

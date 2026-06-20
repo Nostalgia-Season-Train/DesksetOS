@@ -9,7 +9,8 @@ import inlineDesktopMap from './os/register'
 const baseRoutes = Array.from(inlineDesktopMap, ([desktopPath, desktop]) => ({
   path: `/${desktopPath}`,
   name: desktopPath,
-  component: desktop
+  component: desktop,
+  meta: { desktop: true }
 }))
 
 const pageRoutes = [
