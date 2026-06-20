@@ -4,9 +4,9 @@ export const desktopPathList = [
 ]
 
 
-/* ==== 预览图：优先 preview.{jpg,png}，否则用 assets/wallpaper.{jpg,png} ==== */
-const previewCodeMap: Record<string, string> = import.meta.glob('./*/preview.{jpg,png}', { eager: true, import: 'default', query: '?url' }) as any
-const wallpaperCodeMap: Record<string, string> = import.meta.glob('./*/assets/wallpaper.{jpg,png}', { eager: true, import: 'default', query: '?url' }) as any
+/* ==== 预览图：优先 preview.{jpg,png}，否则用 wallpapers/ 下的第一张图 ==== */
+const previewCodeMap: Record<string, string> = import.meta.glob('./*/preview.{jpg,png,jpeg}', { eager: true, import: 'default', query: '?url' }) as any
+const wallpaperCodeMap: Record<string, string> = import.meta.glob('./*/wallpapers/*.{jpg,png,jpeg}', { eager: true, import: 'default', query: '?url' }) as any
 
 function getPreview(path: string): string | undefined {
   for (const key of Object.keys(previewCodeMap)) {
