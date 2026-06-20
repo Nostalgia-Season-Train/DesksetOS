@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { desktopPathList, desktopPreviewMap } from '../../os/register'
+import { desktopPathList, desktopPreviewMap } from '../os/register'
 
 function previewStyle(path: string) {
   const url = desktopPreviewMap.get(path)
