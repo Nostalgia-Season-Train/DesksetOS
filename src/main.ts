@@ -4,7 +4,7 @@ import './style.css'
 
 /* ==== 路由 ==== */
 import { createRouter, createWebHistory } from 'vue-router'
-import inlineDesktopMap from './register'
+import inlineDesktopMap from './os/register'
 
 const baseRoutes = Array.from(inlineDesktopMap, ([desktopPath, desktop]) => ({
   path: `/${desktopPath}`,
@@ -15,11 +15,11 @@ const baseRoutes = Array.from(inlineDesktopMap, ([desktopPath, desktop]) => ({
 const demoRoutes = {
   path: '/demo',
   name: 'demo',
-  component: () => import('./demo/View.vue'),
+  component: () => import('./main/View.vue'),
   children: [
-    { path: '',        name: 'demo-overview',  component: () => import('./demo/pages/Overview.vue') },
-    { path: 'features', name: 'demo-features', component: () => import('./demo/pages/Features.vue') },
-    { path: 'contact',  name: 'demo-contact',  component: () => import('./demo/pages/Contact.vue') },
+    { path: '',        name: 'demo-overview',  component: () => import('./main/pages/Overview.vue') },
+    { path: 'features', name: 'demo-features', component: () => import('./main/pages/Features.vue') },
+    { path: 'contact',  name: 'demo-contact',  component: () => import('./main/pages/Contact.vue') },
   ]
 }
 
